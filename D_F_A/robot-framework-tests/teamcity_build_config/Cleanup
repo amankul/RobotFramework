@@ -1,0 +1,7 @@
+Command Line Script
+
+rfbrowser clean-node
+pip3 uninstall -y -r ./robot-framework-tests/requirements.txt
+:: choco uninstall nodejs.install -dvyaf
+:: choco uninstall nodejs -dyaf --removedependencies
+:: choco uninstall python3 -dvyaf --skipautouninstaller

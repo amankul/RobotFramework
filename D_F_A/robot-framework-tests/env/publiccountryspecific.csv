@@ -1,0 +1,21 @@
+Country,Terms,ProductionUrl,StageUrl,UatUrl,DevUrl
+United States,,https://us.d.com,https://us-stage.d.com,https://us-uat.d.com,https://us-dev.d.com
+Australia,,https://au.d.com,https://au-stage.d.com,https://au-uat.d.com,https://au-dev.d.com
+Belgium,Yes,https://eu.d.com/be-en,https://eu-stage.d.com/be-en,https://eu-uat.d.com/be-en,https://eu-dev.d.com/be-en
+Canada (FR),,https://ca.d.com/fr,https://ca-stage.d.com/fr,https://ca-uat.d.com/fr,https://ca-dev.d.com/fr
+Canada,,https://ca.d.com/en,https://ca-stage.d.com/en,https://ca-uat.d.com/en,https://ca-dev.d.com/en
+Denmark,Yes,https://eu.d.com/dk-en,https://eu-stage.d.com/dk-en,https://eu-uat.d.com/dk-en,https://eu-dev.d.com/dk-en
+Deutschland,,https://eu.d.com/de-de,https://eu-stage.d.com/de-de,https://eu-uat.d.com/de-de,https://eu-dev.d.com/de-de
+Finland,,https://eu.d.com/fi-en,https://eu-stage.d.com/fi-en,https://eu-uat.d.com/fi-en,https://eu-dev.d.com/fi-en
+France,Yes,https://eu.d.com/fr-en,https://eu-stage.d.com/fr-en,https://eu-uat.d.com/fr-en,https://eu-dev.d.com/fr-en
+Hong Kong,Yes,https://hk.d.com,https://hk-stage.d.com,https://hk-uat.d.com,https://hk-dev.d.com
+Ireland,,https://eu.d.com/ie-en,https://eu-stage.d.com/ie-en,https://eu-uat.d.com/ie-en,https://eu-dev.d.com/ie-en
+Italy,Yes,https://eu.d.com/it-en,https://eu-stage.d.com/it-en,https://eu-uat.d.com/it-en,https://eu-dev.d.com/it-en
+Japan,,https://japan.d.com,https://japan-stage.d.com,https://japan-uat.d.com,https://japan-dev.d.com
+Luxembourg,Yes,https://eu.d.com/lu-en,https://eu-stage.d.com/lu-en,https://eu-uat.d.com/lu-en,https://eu-dev.d.com/lu-en
+Nederland,,https://eu.d.com/nl-nl,https://eu-stage.d.com/nl-nl,https://eu-uat.d.com/nl-nl,https://eu-dev.d.com/nl-nl
+Norway,,https://eu.d.com/no-en,https://eu-stage.d.com/no-en,https://eu-uat.d.com/no-en,https://eu-dev.d.com/no-en
+Singapore,,https://sg.d.com,https://sg-stage.d.com,https://sg-uat.d.com,https://sg-dev.d.com
+Sweden,,https://eu.d.com/se-en,https://eu-stage.d.com/se-en,https://eu-uat.d.com/se-en,https://eu-dev.d.com/se-en
+Switzerland,Yes,https://eu.d.com/ch-en,https://eu-stage.d.com/ch-en,https://eu-uat.d.com/ch-en,https://eu-dev.d.com/ch-en
+United Kingdom,,https://eu.d.com/gb-en,https://eu-stage.d.com/gb-en,https://eu-uat.d.com/gb-en,https://eu-dev.d.com/gb-en

@@ -1,0 +1,9 @@
+Command Line Script
+
+:: Install Chocolatey
+@"%env.SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%env.Path%;%env.ALLUSERSPROFILE%\chocolatey\bin"
+
+:: Install Python and Node
+choco install python3 nodejs.install -y
+
+:: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install

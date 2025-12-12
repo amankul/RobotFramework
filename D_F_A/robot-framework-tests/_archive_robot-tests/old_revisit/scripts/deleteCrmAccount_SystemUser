@@ -1,0 +1,53 @@
+BEGIN TRANSACTION
+DECLARE @username AS VARCHAR(50)
+/* CHANGE THIS LINE ONLY */
+SET @username = 'DOMAIN\USERNAME'
+/* END CHANGES */
+DECLARE @userId AS UNIQUEIDENTIFIER
+SET @userId = (SELECT SystemUserId  FROM dbo.SystemUserBase WHERE DomainName = @username)
+DECLARE @orgid AS UNIQUEIDENTIFIER
+SET @orgid = (SELECT OrganizationId FROM dbo.SystemUserBase WHERE systemuserid = @userid)
+DECLARE @userEmail AS VARCHAR(MAX)
+SET @useremail = (SELECT InternalEMailAddress FROM dbo.SystemUserBase WHERE SystemUserId = @userid)
+DECLARE @userfullname AS VARCHAR(max)
+SET @userfullname = (SELECT fullname FROM dbo.systemuserbase WHERE systemuserid = @userid)
+DECLARE @queueid AS UNIQUEIDENTIFIER
+SET @queueid = (SELECT queueid FROM dbo.SystemUserBase WHERE SystemUserId = @userid)
+DECLARE @ownerid AS UNIQUEIDENTIFIER
+SET @ownerid = (SELECT ownerid FROM dbo.OwnerBase WHERE name = @userfullname)
+DECLARE @MSCRMUserID as UNIQUEIDENTIFIER
+SET @MSCRMUserID = (SELECT Userid FROM mscrm_config..SystemUserOrganizations WHERE CrmUserId = @userid AND OrganizationId = @orgid)
+DECLARE @authinfo as NVARCHAR(255)
+SET @authinfo = (SELECT Authinfo FROM mscrm_config..SystemUserAuthentication WHERE Userid = @MSCRMUserID)
+DECLARE @SUid as UNIQUEIDENTIFIER
+SET @Suid = (SELECT id FROM mscrm_config..SystemUserAuthentication WHERE Userid = @MSCRMUserID)
+DELETE FROM dbo.UserSettingsBase WHERE SystemUserId = @userId
+DELETE FROM dbo.TeamMembership WHERE SystemUserId = @userId
+DELETE FROM dbo.SystemUserPrincipals WHERE SystemUserId = @userId
+DELETE FROM dbo.SystemUserRoles WHERE SystemUserId = @userId
+DELETE FROM dbo.SystemUserBusinessUnitEntityMap WHERE systemuserid = @userid
+DELETE FROM dbo.UserQueryBase WHERE OwnerId = @userid
+DELETE FROM dbo.SystemUserProfiles WHERE SystemUserId = @userId
+DELETE FROM dbo.TeamMembership WHERE SystemUserId = @userId
+DELETE FROM dbo.QueueMembership  WHERE SystemUserId = @userId
+update dbo.SdkMessageFilterBase set ModifiedOnBehalfBy = NULL where ModifiedOnBehalfBy = @userid
+update dbo.SdkMessageFilterBase set CreatedOnBehalfBy = NULL where CreatedOnBehalfBy = @userid
+DELETE FROM dbo.SystemUserBase WHERE SystemUserId = @userid
+DELETE FROM dbo.CalendarRuleBase WHERE CalendarId IN (SELECT CalendarId FROM dbo.CalendarBase WHERE PrimaryUserId = @userid)
+DELETE FROM dbo.CalendarBase WHERE primaryuserid = @userId
+DELETE FROM dbo.QueueBase WHERE QueueId = @queueid
+DELETE FROM dbo.PrincipalEntityMap WHERE PrincipalId = @ownerid
+DELETE FROM dbo.PrincipalObjectAccess WHERE PrincipalId = @ownerid
+DELETE FROM dbo.UserEntityUISettingsBase WHERE OwnerID = @userid
+DELETE FROM dbo.UserApplicationMetadataBase WHERE OwnerID = @userid
+DELETE FROM dbo.PostFollowBase WHERE OwnerID = @userid
+DELETE FROM dbo.MailboxBase WHERE OwnerId = @ownerid
+DELETE FROM dbo.OwnerBase WHERE OwnerId = @ownerid
+DELETE FROM dbo.EmailSearchBase WHERE EmailAddress = @userEmail
+DELETE FROM dbo.ResourceBase WHERE name = @userfullname
+DELETE FROM dbo.InternalAddressBase WHERE parentid = @userId
+DELETE FROM mscrm_config..SystemUserOrganizations WHERE CrmUserId = @userid AND OrganizationId = @orgid
+DELETE FROM mscrm_config..SystemUserAuthentication WHERE authinfo = @authinfo
+DELETE FROM mscrm_config..SystemUser WHERE id = @MSCRMUserID
+/* rollback */
+COMMIT

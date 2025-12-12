@@ -1,0 +1,74 @@
+AU:
+  client_site_presence: true
+  country_language: au-en
+  country_name: Australia
+  info_dateformat: "%d/%m/%Y"
+
+CA:
+  country_language: ca-en
+  country_name: Canada
+  info_dateformat: "%m/%d/%Y"
+
+
+CA-FR:
+  country_language: ca-fr
+  country_name: Canada (French)
+
+
+CH:
+  country_language: ch-en
+  country_name: Switzerland
+  info_dateformat: "%d/%m/%Y"
+
+DE:
+  country_language: de-de
+  country_name: Germany
+  info_dateformat: "%d/%m/%Y"
+
+HK:
+  country_language: hk-en
+  country_name: Hong Kong
+
+IE:
+  country_language: ie-en
+  country_name: Ireland
+  info_dateformat: "%d/%m/%Y"
+
+JP:
+  country_language: jp-en
+  country_name: Japan
+
+NL:
+  country_language: nl-nl
+  country_name: Netherlands
+  info_dateformat: "%d/%m/%Y"
+
+'NO':
+  country_language: no-en
+  country_name: Norway
+  info_dateformat: "%d/%m/%Y"
+
+FI:
+  country_language: fi-en
+  country_name: Finland
+  info_dateformat: "%d/%m/%Y"
+
+SE:
+  country_language: se-en
+  country_name: Sweden
+  info_dateformat: "%Y/%m/%d"
+
+SG:
+  country_language: sg-en
+  country_name: Singapore
+  info_dateformat: "%d/%m/%Y"
+
+UK:
+  country_language: gb-en
+  country_name: United Kingdom
+  info_dateformat: "%d/%m/%Y"
+
+US:
+  country_language: us-en
+  country_name: United States
+  info_dateformat: "%m/%d/%Y"

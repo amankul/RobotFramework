@@ -1,0 +1,45 @@
+#  Country Configuration
+
+AU:
+      country_name: Australia
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+CA:
+      country_name: Canada
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+DE:
+      country_name: Germany
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+HK:
+      country_name: Hong Kong
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+IE:
+      country_name: Ireland
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+NL:
+      country_name: Netherlands
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+NZ:
+      country_name: New Zealand
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+UK:
+      country_name: United Kingdom
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+SG:
+      country_name: Singapore
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+CH:
+      country_name: Switzerland
+      headers: [FUNDS,TOOLS,EVENTS,RESEARCH,RESOURCES]
+
+US:
+      country_name: United States
+      headers: [INVESTMENTS,TOOLS,EVENTS,RESEARCH,RESOURCES]

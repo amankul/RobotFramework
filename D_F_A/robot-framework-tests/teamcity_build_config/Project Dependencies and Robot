@@ -1,0 +1,20 @@
+Command Line Script
+
+:: Add to path PATH=%env.Path%;C:\Python310;C:\Python310\scripts
+python.exe -m pip install --upgrade pip
+pip install -U -r ./robot-framework-tests/requirements.txt
+rfbrowser clean-node
+rfbrowser init
+
+IF NOT "%env.testname%" == "" (
+    echo RUNNING TEST
+robot --variable environment:%env.testenvironment% --variable AD_USERNAME:%env.username% --variable AD_PASSWORD:%env.password% --variable browser:%env.browser% --variable ctry_flag:%env.singleCountry% -t "%env.testname%" --listener RetryFailed:%env.retryAttempts% ./robot-framework-tests/tests/
+) ELSE (
+    IF NOT "%env.testtag%" == "" (
+        echo RUNNING TAG
+pabot --testlevelsplit --verbose --processtimeout 5000 --variable environment:%env.testenvironment% --variable AD_USERNAME:%env.username% --variable AD_PASSWORD:%env.password% --variable browser:%env.browser% --variable ctry_flag:%env.singleCountry% -i "%env.testtag%" --listener RetryFailed:%env.retryAttempts% ./robot-framework-tests/tests/%env.testapplication%
+    ) ELSE (
+        echo RUNNING EVERYTHING
+pabot --testlevelsplit --verbose --processtimeout 5000 --variable environment:%env.testenvironment% --variable AD_USERNAME:%env.username% --variable AD_PASSWORD:%env.password% --variable browser:%env.browser%  --variable ctry_flag:%env.singleCountry% --listener RetryFailed:%env.retryAttempts% ./robot-framework-tests/tests/%env.testapplication%
+    )
+)

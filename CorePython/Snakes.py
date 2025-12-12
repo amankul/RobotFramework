@@ -1,4 +1,4 @@
-# We have a two-dimensional board game involving snakes.
+# We have a two-d board game involving snakes.
 # The board has two types of squares on it: +'s represent impassable squares where snakes cannot go,
 # and 0's represent squares through which snakes can move.
 # Snakes can only enter on the edges of the board, and each snake can move in only one direction.

@@ -1,0 +1,29 @@
+{
+  "name": "newman-collection-runner",
+  "version": "0.0.1",
+  "main": "runcollection.js",
+  "author": "Randy Schmidt",
+  "description": "Creates and runs collections using newman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Postman",
+    "newman",
+    "collection runner"
+  ],
+  "dependencies": {
+    "set-value":"3.0.1",
+    "newman": "^4.5.1",
+    "newman-reporter-csv": "^1.1.1",
+    "newman-reporter-htmlextra": "^1.7.5",
+    "newman-reporter-json": "^1.0.0",
+    "newman-reporter-teamcity": "0.1.11",
+    "postman-collection": "^3.5.0"
+  },
+  "devDependencies": {
+    "xunit-viewer": "^5.1.10"
+  }
+}

@@ -1,0 +1,11 @@
+openpyxl
+pandas
+pyyaml
+requests_ntlm
+robotframework
+robotframework-browser
+robotframework-jsonlibrary
+robotframework-pabot
+robotframework-requests
+robotframework-retryfailed
+webdriver-manager==3.8.3
